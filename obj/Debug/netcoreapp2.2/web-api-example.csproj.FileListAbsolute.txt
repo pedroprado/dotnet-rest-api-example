@@ -1,0 +1,14 @@
+/home/pedroprado/Área de Trabalho/Projetos/Dotnet/web-api-example/bin/Debug/netcoreapp2.2/web-api-example.deps.json
+/home/pedroprado/Área de Trabalho/Projetos/Dotnet/web-api-example/bin/Debug/netcoreapp2.2/web-api-example.runtimeconfig.json
+/home/pedroprado/Área de Trabalho/Projetos/Dotnet/web-api-example/bin/Debug/netcoreapp2.2/web-api-example.runtimeconfig.dev.json
+/home/pedroprado/Área de Trabalho/Projetos/Dotnet/web-api-example/bin/Debug/netcoreapp2.2/web-api-example.dll
+/home/pedroprado/Área de Trabalho/Projetos/Dotnet/web-api-example/bin/Debug/netcoreapp2.2/web-api-example.pdb
+/home/pedroprado/Área de Trabalho/Projetos/Dotnet/web-api-example/obj/Debug/netcoreapp2.2/web-api-example.csprojAssemblyReference.cache
+/home/pedroprado/Área de Trabalho/Projetos/Dotnet/web-api-example/obj/Debug/netcoreapp2.2/web-api-example.csproj.CoreCompileInputs.cache
+/home/pedroprado/Área de Trabalho/Projetos/Dotnet/web-api-example/obj/Debug/netcoreapp2.2/web-api-example.RazorAssemblyInfo.cache
+/home/pedroprado/Área de Trabalho/Projetos/Dotnet/web-api-example/obj/Debug/netcoreapp2.2/web-api-example.RazorAssemblyInfo.cs
+/home/pedroprado/Área de Trabalho/Projetos/Dotnet/web-api-example/obj/Debug/netcoreapp2.2/web-api-example.AssemblyInfoInputs.cache
+/home/pedroprado/Área de Trabalho/Projetos/Dotnet/web-api-example/obj/Debug/netcoreapp2.2/web-api-example.AssemblyInfo.cs
+/home/pedroprado/Área de Trabalho/Projetos/Dotnet/web-api-example/obj/Debug/netcoreapp2.2/web-api-example.RazorTargetAssemblyInfo.cache
+/home/pedroprado/Área de Trabalho/Projetos/Dotnet/web-api-example/obj/Debug/netcoreapp2.2/web-api-example.dll
+/home/pedroprado/Área de Trabalho/Projetos/Dotnet/web-api-example/obj/Debug/netcoreapp2.2/web-api-example.pdb

@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using web_api_example.Models;
+using web_api_example.Repository;
 
 namespace web_api_example
 {
@@ -27,7 +28,9 @@ namespace web_api_example
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<UserDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SQL_SERVER_CONNECTION_STRING")));
+            var connectionString = Configuration["ConnectionStrings:SQL_SERVER_CONNECTION_STRING"];
+            //services.AddDbContext<UserDBContext>(options => options.UseMySql(connectionString));
+            services.AddTransient<IUserRepository, UserRepository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         
         }
