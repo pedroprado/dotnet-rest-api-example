@@ -29,8 +29,10 @@ namespace web_api_example
         public void ConfigureServices(IServiceCollection services)
         {
             var connectionString = Configuration["ConnectionStrings:SQL_SERVER_CONNECTION_STRING"];
-            //services.AddDbContext<UserDBContext>(options => options.UseMySql(connectionString));
-            services.AddTransient<IUserRepository, UserRepository>();
+            
+            services.AddDbContext<RepositoryContext>(options => options.UseMySql(connectionString));
+            services.AddTransient<IOrderRepository, OrderRepository>();
+        
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         
         }
