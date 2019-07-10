@@ -32,7 +32,6 @@ namespace web_api_example
             
             services.AddDbContext<RepositoryContext>(options => options.UseMySql(connectionString));
             services.AddTransient<IOrderRepository, OrderRepository>();
-        
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         
         }

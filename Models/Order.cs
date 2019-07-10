@@ -7,9 +7,6 @@ namespace web_api_example.Models
     [Table("orders")]
     public class Order
     {
-
-       
-
         [Key]
         [Column("order_id")]
         public int? orderId {get; set;}

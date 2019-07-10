@@ -13,12 +13,15 @@ namespace web_api_example.Repository
         }
         public void createOrder(Order order)
         {
-            throw new System.NotImplementedException();
+            _repositoryContext.orders.Add(order);
+            _repositoryContext.SaveChanges();
         }
 
         public void deleteOrderById(int order_id)
         {
-            throw new System.NotImplementedException();
+            var order = _repositoryContext.orders.FirstOrDefault(o => o.orderId == order_id);
+            _repositoryContext.Remove(order);
+            _repositoryContext.SaveChanges();
         }
 
         public Order getOrderById(int order_id)
@@ -28,12 +31,13 @@ namespace web_api_example.Repository
 
         public IEnumerable<Order> getOrders()
         {
-            throw new System.NotImplementedException();
+            return _repositoryContext.orders.ToList();
         }
 
         public void updateOrder(Order order)
         {
-            throw new System.NotImplementedException();
+            _repositoryContext.orders.Update(order);
+            _repositoryContext.SaveChanges();
         }
     }
 }
