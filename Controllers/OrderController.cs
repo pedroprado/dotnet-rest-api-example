@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using web_api_example.Contracts;
 using web_api_example.Models;
 using web_api_example.Repository;
 
@@ -13,10 +14,23 @@ namespace web_api_example.Controllers
     [ApiController]
     public class OrderController:Controller
     {
-        private readonly IOrderRepository _orderRepository;
 
-        public OrderController(IOrderRepository orderRepository){
+        private JObject createJsonResponse(Exception exception){
+            JObject errorResponse = new JObject();
+            errorResponse["error"] = exception.Message;
+            errorResponse["stack"] = exception.StackTrace;
+            if(exception.InnerException != null){
+              errorResponse["message"] =   exception.InnerException.Message;
+            }
+            return errorResponse;
+        }
+        private readonly IOrderRepository _orderRepository;
+        private readonly ILoggerManager _logger;
+
+        public OrderController(IOrderRepository orderRepository,
+                                ILoggerManager logger){
             this._orderRepository = orderRepository;
+            this._logger = logger;
         }
 
         [HttpGet("{order_id}")]
@@ -38,13 +52,7 @@ namespace web_api_example.Controllers
                 _orderRepository.createOrder(order);
                 return new ObjectResult(JsonConvert.DeserializeObject(@"{'message': 'Saved.'}"));
             }catch(Exception ex){
-                JObject errorResponse = new JObject();
-                errorResponse["error"] = ex.Message;
-                errorResponse["stack"] = ex.StackTrace;
-                if(ex.InnerException != null){
-                    errorResponse["message"] =   ex.InnerException.Message;
-                }
-                return new ObjectResult(errorResponse);
+                return new ObjectResult(createJsonResponse(ex));
             }
         }
 
@@ -55,13 +63,7 @@ namespace web_api_example.Controllers
                  _orderRepository.updateOrder(order);
                 return new ObjectResult(JsonConvert.DeserializeObject(@"{'message': 'Updated.'}"));
             }catch(Exception ex){
-                JObject errorResponse = new JObject();
-                errorResponse["error"] = ex.Message;
-                errorResponse["stack"] = ex.StackTrace;
-                if(ex.InnerException != null){
-                    errorResponse["message"] =   ex.InnerException.Message;
-                }
-                return new ObjectResult(errorResponse);
+                return new ObjectResult(createJsonResponse(ex));
             }
         }
 
@@ -71,13 +73,7 @@ namespace web_api_example.Controllers
                 _orderRepository.deleteOrderById(order_id);
                 return new ObjectResult(JsonConvert.DeserializeObject(@"{'message': 'Deleted.'}"));
             }catch(Exception ex){
-                  JObject errorResponse = new JObject();
-                errorResponse["error"] = ex.Message;
-                errorResponse["stack"] = ex.StackTrace;
-                if(ex.InnerException != null){
-                    errorResponse["message"] =   ex.InnerException.Message;
-                }
-                return new ObjectResult(errorResponse);
+                return new ObjectResult(createJsonResponse(ex));
             }
         }
 
