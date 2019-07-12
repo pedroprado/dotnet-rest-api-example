@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "bcc4d9f918155588ff0b15584b0502aeb700a41a"
+    "signature": "099d11f719607dea597a420d38d380413aa8172c"
   },
   "compilationOptions": {
     "defines": [
@@ -28,6 +28,8 @@
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.EntityFrameworkCore.Tools": "2.2.6",
           "Microsoft.NETCore.App": "2.2.0",
+          "NLog": "4.5.4",
+          "NLog.Web.AspNetCore": "4.5.4",
           "Pomelo.EntityFrameworkCore.MySql": "2.2.0",
           "Pomelo.EntityFrameworkCore.MySql.Design": "1.1.2"
         },
@@ -131,6 +133,50 @@
         },
         "compile": {
           "lib/netcoreapp2.1/MySqlConnector.dll": {}
+        }
+      },
+      "NLog/4.5.4": {
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.5.4.7700"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/NLog.dll": {}
+        }
+      },
+      "NLog.Extensions.Logging/1.0.2": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "2.2.0",
+          "NLog": "4.5.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NLog.Extensions.Logging.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.2.652"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/NLog.Extensions.Logging.dll": {}
+        }
+      },
+      "NLog.Web.AspNetCore/4.5.4": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Abstractions": "2.2.0",
+          "Microsoft.AspNetCore.Http": "2.2.0",
+          "Microsoft.AspNetCore.Http.Extensions": "2.2.0",
+          "Microsoft.AspNetCore.Routing.Abstractions": "2.2.0",
+          "NLog.Extensions.Logging": "1.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NLog.Web.AspNetCore.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.5.4.832"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/NLog.Web.AspNetCore.dll": {}
         }
       },
       "Pomelo.EntityFrameworkCore.MySql/2.2.0": {
@@ -3395,6 +3441,27 @@
       "sha512": "sha512-AMdiJ1anymn/MnvSKkaWfZXs49WUsdGi/5nlVGIOQ5QYhRZIfAFobht+Y7rK1UtEUzbqnjCKUBI6Zpp4zzRupQ==",
       "path": "mysqlconnector/0.49.2",
       "hashPath": "mysqlconnector.0.49.2.nupkg.sha512"
+    },
+    "NLog/4.5.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sYOzep0pdVat2zkOREy6FQwcH4zRCTimGr4c1Esqc0+t9QYvQ5JXDnW/sdqOsVxbxJ28sa/3MRUGSAfXz7eIGw==",
+      "path": "nlog/4.5.4",
+      "hashPath": "nlog.4.5.4.nupkg.sha512"
+    },
+    "NLog.Extensions.Logging/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-i5iGN3TUEGtRMO1m0xjDwFugVZz4FITJ/JNMyC4HtzBLipUJSApXiTaCR8fWkTkkyqb5fYkvgLMV4XBmwxxEqQ==",
+      "path": "nlog.extensions.logging/1.0.2",
+      "hashPath": "nlog.extensions.logging.1.0.2.nupkg.sha512"
+    },
+    "NLog.Web.AspNetCore/4.5.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dTCjiiUAccDD2XRTg3L74bamYmjFozaA/mXEeV08bOZ0bIez1jM0pXfQTb2awFsiibrgDuCf3JJQ/xf2OJB4fA==",
+      "path": "nlog.web.aspnetcore/4.5.4",
+      "hashPath": "nlog.web.aspnetcore.4.5.4.nupkg.sha512"
     },
     "Pomelo.EntityFrameworkCore.MySql/2.2.0": {
       "type": "package",
