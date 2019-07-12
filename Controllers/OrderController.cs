@@ -77,6 +77,13 @@ namespace web_api_example.Controllers
             }
         }
 
+        [HttpGet("/join/customer")]
+        public IActionResult getOrderJoinCustomer(){
+            
+
+            return new ObjectResult("done");
+        }
+
         
       
 

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -26,5 +27,7 @@ namespace web_api_example.Models
         public string state {get;set;}
         [Column("points")]
         public int points {get; set;}
+
+        public ICollection<Order> Orders{get;set;}
     }
 }

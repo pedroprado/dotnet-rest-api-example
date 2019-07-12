@@ -22,6 +22,8 @@ namespace web_api_example.Models
         public DateTime? shippedDate {get;set;}
         [Column("shipper_id")]
         public int? shipperId {get;set;}
+
+        public Customer Customer{get;set;}
     }
 
 
