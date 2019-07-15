@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -77,17 +78,21 @@ namespace web_api_example.Controllers
             }
         }
 
-        [HttpGet("/join/customer")]
-        public IActionResult getOrderJoinCustomer(){
+        [HttpGet("join/customer")]
+        public IActionResult getOrderWithCustomer(){
             
+            var joinQuery = _orderRepository.getOrderWithCustomer();                    
+            return new ObjectResult(joinQuery);
 
-            return new ObjectResult("done");
         }
 
-        
-      
+        [HttpGet("get/one/{order_id}/{first_name}")]
+        public IActionResult getOrderStatusByCustomerName(int order_id, string first_name){
+            
+            var result = _orderRepository.getOrderStatusByCustomerName(order_id, first_name);
 
-
+            return new ObjectResult(JsonConvert.DeserializeObject(result));
+        }
 
     }
 }
